@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1b">
+  <title>Alchemist Trading Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="levelModal" class="modal hidden"><div class="modal-panel level-panel"><div class="level-sigil">✦</div><p class="eyebrow">PENCAPAIAN BARU</p><h2>LEVEL UP!</h2><p id="levelModalText">Kekuatan alchemist meningkat.</p><button class="btn btn-gold" id="closeLevelModal">LANJUTKAN</button></div></div>
+
+  <main id="loginScreen" class="login-screen">
+    <div class="login-art">
+      <div class="rune rune-a">ᚨ</div><div class="rune rune-b">✧</div><div class="orb"></div>
+      <div class="mage"><div class="mage-hood"></div><div class="mage-face"></div><div class="mage-body"></div><div class="mage-cloak"></div><div class="mage-staff"></div></div>
+      <div class="art-caption"><span>THE PATH OF KNOWLEDGE</span><b>DISCIPLINE · STRATEGY · MASTERY</b></div>
+    </div>
+    <section class="login-card glass">
+      <div class="brand-mark">A<span>✦</span></div>
+      <p class="eyebrow">WELCOME, APPRENTICE</p>
+      <h1>ALCHEMIST<br><em>TRADING ACADEMY</em></h1>
+      <p class="login-subtitle">Ubah pengetahuan menjadi keahlian. Mulai perjalananmu menjadi master trader.</p>
+      <form id="loginForm">
+        <label for="username">USERNAME</label><input id="username" name="username" autocomplete="username" placeholder="Masukkan nama pemain" maxlength="20" required>
+        <label for="password">PASSWORD</label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required>
+        <button class="btn btn-gold btn-wide" type="submit" id="loginButton">MASUK KE AKADEMI <span>→</span></button>
+      </form>
+      <p class="login-note"><span class="status-dot"></span> MODE DEMO · AKUN SIMULASI</p>
+      <p class="login-foot">Progres disimpan secara lokal di browser ini.</p>
+    </section>
+  </main>
+
+  <div id="gameShell" class="game-shell hidden">
+    <aside id="sidebar" class="sidebar glass">
+      <div class="side-brand"><div class="mini-crest">A</div><div><b>ALCHEMIST</b><small>TRADING ACADEMY</small></div></div>
+      <div class="side-player"><div class="avatar" id="sideAvatar">✦</div><div class="side-player-info"><b id="sideUsername">Apprentice</b><small id="sideRank">Novice Trader</small></div></div>
+      <nav class="side-nav">
+        <button class="nav-link active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-link" data-page="play"><span>⚔</span> Mulai Bermain</button>
+        <button class="nav-link" data-page="learning"><span>◈</span> Kategori Pembelajaran</button>
+        <button class="nav-link" data-page="leaderboard"><span>♜</span> Papan Peringkat</button>
+        <button class="nav-link" data-page="profile"><span>♙</span> Profil Pemain</button>
+        <button class="nav-link" data-page="achievements"><span>✧</span> Achievement</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-tip"><span>✦</span><p>“Disiplin adalah sihir terkuat seorang trader.”</p></div>
+        <button class="nav-link logout-link" id="logoutButton"><span>⇥</span> Keluar Game</button>
+      </div>
+    </aside>
+    <section class="main-area">
+      <header class="topbar glass">
+        <button id="mobileMenu" class="mobile-menu" aria-label="Buka menu">☰</button>
+        <div><span class="top-kicker">ALCHEMY JOURNAL</span><b id="pageTitle">Dashboard</b></div>
+        <div class="top-actions">
+          <button class="icon-btn" id="musicToggle" title="Musik latar">♫ <small>OFF</small></button>
+          <button class="icon-btn" id="soundToggle" title="Efek suara">◖ <small>ON</small></button>
+          <button class="icon-btn" id="fullscreenButton" title="Layar penuh">⛶</button>
+          <div class="top-level"><span>LV.</span><b id="topLevel">1</b></div>
+        </div>
+      </header>
+      <div id="pageContent" class="page-content"></div>
+      <footer class="game-footer">ALCHEMIST TRADING ACADEMY <span>•</span> BELAJAR DENGAN BIJAK, TRADING DENGAN RISIKO TERUKUR</footer>
+    </section>
+  </div>
+  <script src="js/database.js"></script><script src="js/animation.js"></script><script src="js/quiz.js"></script><script src="js/app.js"></script>
+</body>
+</html>
